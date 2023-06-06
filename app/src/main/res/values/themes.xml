@@ -23,8 +23,25 @@
         <item name="android:textSize">24sp</item>
     </style>
 
+    <style name="TextContent.Heading2" parent="TextContent">
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="TextContent.Headline" parent="TextContent">
         <item name="android:textColor">@color/orange</item>
+    </style>
+
+    <style name="Button">
+        <item name="cornerRadius">20dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="iconGravity">textTop</item>
+        <item name="iconSize">24dp</item>
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">75dp</item>
+        <item name="android:layout_weight">1</item>
     </style>
 
     <style name="Theme.CatIdentifierApp" parent="Base.Theme.CatIdentifierApp" />

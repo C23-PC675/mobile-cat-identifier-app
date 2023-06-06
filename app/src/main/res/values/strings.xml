@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Cat Identifier App</string>
+    <string name="settings">Settings</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="home_text_1">Find Your</string>
+    <string name="home_text_2">Cat Favorite</string>
+    <string name="recommend">Recommend</string>
+    <string name="favorite">Favorite</string>
+    <string name="recent">Recent</string>
+    <string name="popular">Popular</string>
+    <string name="all">All</string>
+    <string name="cat_picture">Cat Picture</string>
 
 </resources>
