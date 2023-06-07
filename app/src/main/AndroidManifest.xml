@@ -13,6 +13,12 @@
         android:theme="@style/Theme.CatIdentifierApp"
         tools:targetApi="31">
         <activity
+            android:name=".MediaResult"
+            android:exported="false" />
+        <activity
+            android:name=".MediaSelection"
+            android:exported="false" />
+        <activity
             android:name=".CatInformation"
             android:exported="false" />
         <activity
