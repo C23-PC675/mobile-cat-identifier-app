@@ -13,4 +13,6 @@
     <string name="cat_picture">Cat Picture</string>
     <string name="cat_overview">Kucing Persia telah ada selama berabad-abad dan dikenal karena bulu mereka yang panjang, wajah datar, hidung pesek, dan tubuh yang kompak. Mereka telah menjadi salah satu ras kucing yang paling populer di seluruh dunia karena keindahan dan kepribadian yang tenang</string>
     <string name="cat_care">Kucing dengan bulu panjang membutuhkan perawatan ekstra terhadap bulu mereka. Sikat bulu secara teratur untuk mencegah kusut dan membantu menghilangkan rontok bulu yang berlebihan. Pada beberapa ras dengan bulu panjang, seperti Persia, perawatan tambahan seperti pembersihan mata dan pemangkasan bulu di sekitar anus juga penting.</string>
+    <string name="cat_identifier">Cat Identifier</string>
+    <string name="tagline">Cat Care Simplified</string>
 </resources>
