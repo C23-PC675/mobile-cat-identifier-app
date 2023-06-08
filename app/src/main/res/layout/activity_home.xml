@@ -113,7 +113,7 @@
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fabScanner"
         style="@style/Widget.Material3.FloatingActionButton.Surface"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

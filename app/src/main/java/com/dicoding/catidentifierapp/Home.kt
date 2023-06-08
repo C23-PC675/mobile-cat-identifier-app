@@ -1,7 +1,8 @@
 package com.dicoding.catidentifierapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.catidentifierapp.databinding.ActivityHomeBinding
 
 class Home : AppCompatActivity() {
@@ -11,5 +12,9 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.fabScanner.setOnClickListener {
+            startActivity(Intent(this, MediaSelection::class.java))
+        }
     }
 }
