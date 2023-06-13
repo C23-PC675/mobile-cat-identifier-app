@@ -8,5 +8,6 @@
     <color name="crimson">#FFEC4543</color>
     <color name="gray">#808080</color>
     <color name="transparent">#00000000</color>
+    <color name="black_transparent">#17000000</color>
 
 </resources>
