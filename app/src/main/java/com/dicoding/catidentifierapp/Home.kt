@@ -15,6 +15,7 @@ class Home : AppCompatActivity() {
 
         binding.fabScanner.setOnClickListener {
             startActivity(Intent(this, MediaSelection::class.java))
+
         }
     }
 }

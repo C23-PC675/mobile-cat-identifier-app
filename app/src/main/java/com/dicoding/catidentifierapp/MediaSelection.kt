@@ -4,7 +4,9 @@ import android.Manifest
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.icu.text.SimpleDateFormat
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
@@ -19,13 +21,16 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import com.dicoding.catidentifierapp.databinding.ActivityMediaSelectionBinding
+import java.io.File
 import java.util.Locale
 import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 class MediaSelection : AppCompatActivity() {
     private lateinit var binding: ActivityMediaSelectionBinding
 
     private var imageCapture: ImageCapture? = null
+
     private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
     private lateinit var cameraExecutor: ExecutorService
@@ -51,8 +56,9 @@ class MediaSelection : AppCompatActivity() {
         }
 
         binding.gallery.setOnClickListener { startGallery() }
+        binding.close.setOnClickListener { finish() }
 
-
+        cameraExecutor = Executors.newSingleThreadExecutor()
     }
 
     private fun startGallery() {
@@ -67,9 +73,15 @@ class MediaSelection : AppCompatActivity() {
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == RESULT_OK) {
-            Toast.makeText(
-                baseContext, "OKE", Toast.LENGTH_SHORT
-            ).show()
+
+            val data: Intent? = result.data
+            val selectedImageUri: Uri? = data?.data
+
+            if (selectedImageUri != null) {
+                val intent = Intent(this, MediaResult::class.java)
+                intent.putExtra("imageUri", selectedImageUri.toString())
+                startActivity(intent)
+            }
         }
     }
 
@@ -117,14 +129,23 @@ class MediaSelection : AppCompatActivity() {
                 override fun onError(exc: ImageCaptureException) {
                     Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
                 }
-
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                    val msg = "Photo capture succeeded: ${output.savedUri}"
-                    Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
-                    Log.d(TAG, msg)
+                    val savedUri = output.savedUri ?: return
+                    val intent = Intent(this@MediaSelection, MediaResult::class.java)
+                    intent.putExtra("imageUri", savedUri.toString())
+                    startActivity(intent)
                 }
+
+//                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+//                    val msg = "Photo capture succeeded: ${output.savedUri}"
+//                    Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+//                    Log.d(TAG, msg)
+//
+//                }
             })
     }
+
+
 
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
@@ -174,6 +195,7 @@ class MediaSelection : AppCompatActivity() {
 
     companion object {
         private const val TAG = "CameraXApp"
+        const val CAMERA_X_RESULT = 200
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
         private val REQUIRED_PERMISSIONS = mutableListOf(
             Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO
