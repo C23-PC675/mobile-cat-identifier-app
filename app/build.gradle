@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -38,7 +39,10 @@ android {
 
 dependencies {
 
-    def camerax_version = "1.2.2"
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+    def camerax_version = "1.2.3"
     implementation "androidx.camera:camera-core:${camerax_version}"
     implementation "androidx.camera:camera-camera2:${camerax_version}"
     implementation "androidx.camera:camera-lifecycle:${camerax_version}"

@@ -1,0 +1,35 @@
+package com.dicoding.catidentifierapp
+
+import android.content.Intent
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+
+class CatListAdapter(private val listAdapter: ArrayList<CatData>) :
+    RecyclerView.Adapter<CatListAdapter.ViewHolder>() {
+
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.item_list, viewGroup, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+        viewHolder.tvUserName.text = listAdapter[position].name
+        viewHolder.tvDescription.text = listAdapter[position].description
+        Glide.with(viewHolder.imgUserPhoto.context).load(listAdapter[position].photoUrl)
+            .into(viewHolder.imgUserPhoto)
+    }
+
+    override fun getItemCount(): Int = listAdapter.size
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val tvUserName: TextView = view.findViewById(R.id.title)
+        val tvDescription: TextView = view.findViewById(R.id.description)
+        val imgUserPhoto: ImageView = view.findViewById(R.id.image)
+    }
+}
