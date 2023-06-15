@@ -20,5 +20,6 @@ class Home : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         val adapter = CatListAdapter(catList)
         binding.recyclerView.adapter = adapter
+
     }
 }

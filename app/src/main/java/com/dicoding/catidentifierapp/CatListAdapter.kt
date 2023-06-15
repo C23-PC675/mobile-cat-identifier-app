@@ -23,6 +23,12 @@ class CatListAdapter(private val listAdapter: ArrayList<CatData>) :
         viewHolder.tvDescription.text = listAdapter[position].description
         Glide.with(viewHolder.imgUserPhoto.context).load(listAdapter[position].photoUrl)
             .into(viewHolder.imgUserPhoto)
+
+        viewHolder.itemView.setOnClickListener {
+            val intentDetail = Intent(viewHolder.itemView.context, CatInformation::class.java)
+            intentDetail.putExtra("CAT", listAdapter[position])
+            viewHolder.itemView.context.startActivity(intentDetail)
+        }
     }
 
     override fun getItemCount(): Int = listAdapter.size
