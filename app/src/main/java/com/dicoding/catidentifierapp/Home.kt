@@ -2,15 +2,10 @@ package com.dicoding.catidentifierapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.catidentifierapp.databinding.ActivityHomeBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class Home : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
@@ -26,12 +21,32 @@ class Home : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
         mainViewModel.getCats()
-        mainViewModel.cats.observe(this){
-            setStories(it)
+        mainViewModel.cats.observe(this) {
+            setCats(it)
         }
 
+        binding.AllScreen.setOnClickListener {
+            val intent = Intent(this, CatsList::class.java)
+            startActivity(intent)
+        }
+
+        binding.PopularScreen.setOnClickListener {
+            val intent = Intent(this, CatsListPopular::class.java)
+            startActivity(intent)
+        }
+
+        binding.RecentScreen.setOnClickListener {
+            val intent = Intent(this, CatsListRecent::class.java)
+            startActivity(intent)
+        }
+
+        binding.FavoriteScreen.setOnClickListener {
+            val intent = Intent(this, CatsListFavorite::class.java)
+            startActivity(intent)
+        }
     }
-    private fun setStories(cats: List<ResponseItem>) {
+
+    private fun setCats(cats: List<ResponseItem>) {
         val adapter = CatListAdapter(cats)
         binding.recyclerView.adapter = adapter
     }

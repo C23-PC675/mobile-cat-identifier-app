@@ -59,21 +59,25 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/AllScreen"
                     style="@style/Button"
                     android:text="@string/all"
                     app:icon="@drawable/ic_menu_all" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/PopularScreen"
                     style="@style/Button"
                     android:text="@string/popular"
                     app:icon="@drawable/ic_baseline_hot_24" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/RecentScreen"
                     style="@style/Button"
                     android:text="@string/recent"
                     app:icon="@drawable/ic_baseline_recent_24" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/FavoriteScreen"
                     style="@style/Button"
                     android:text="@string/favorite"
                     app:icon="@drawable/ic_baseline_favorite_border_24" />

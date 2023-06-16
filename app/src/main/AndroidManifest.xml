@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature android:name="android.hardware.camera.any" />
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -21,6 +22,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CatIdentifierApp"
         tools:targetApi="31">
+        <activity
+            android:name=".CatsListFavorite"
+            android:exported="false" />
+        <activity
+            android:name=".CatsListRecent"
+            android:exported="false" />
+        <activity
+            android:name=".CatsListPopular"
+            android:exported="false" />
+        <activity
+            android:name=".CatsList"
+            android:exported="false" />
         <activity
             android:name=".Home"
             android:exported="false" />

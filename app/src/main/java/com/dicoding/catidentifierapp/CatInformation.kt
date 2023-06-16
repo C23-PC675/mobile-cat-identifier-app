@@ -26,5 +26,9 @@ class CatInformation : AppCompatActivity() {
             Glide.with(binding.image.context).load(cat.catImage)
                 .into(binding.image)
         }
+
+        binding.close.setOnClickListener {
+            finish()
+        }
     }
 }
