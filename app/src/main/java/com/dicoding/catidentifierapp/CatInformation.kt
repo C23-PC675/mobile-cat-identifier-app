@@ -14,16 +14,16 @@ class CatInformation : AppCompatActivity() {
         binding = ActivityCatInformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val cat = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("CAT", CatData::class.java)
+            intent.getParcelableExtra("CAT", ResponseItem::class.java)
         } else {
             @Suppress("DEPRECATION")
             intent.getParcelableExtra("CAT")
         }
 
         if (cat != null) {
-            binding.name.text = cat.name
-            binding.overview.text = cat.description
-            Glide.with(binding.image.context).load(cat.photoUrl)
+            binding.name.text = cat.catRaces
+            binding.overview.text = cat.catDesc
+            Glide.with(binding.image.context).load(cat.catImage)
                 .into(binding.image)
         }
     }

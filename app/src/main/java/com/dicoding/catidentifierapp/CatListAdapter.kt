@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class CatListAdapter(private val listAdapter: ArrayList<CatData>) :
+class CatListAdapter(private val listAdapter: List<ResponseItem>) :
     RecyclerView.Adapter<CatListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
@@ -19,9 +19,9 @@ class CatListAdapter(private val listAdapter: ArrayList<CatData>) :
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.tvUserName.text = listAdapter[position].name
-        viewHolder.tvDescription.text = listAdapter[position].description
-        Glide.with(viewHolder.imgUserPhoto.context).load(listAdapter[position].photoUrl)
+        viewHolder.tvUserName.text = listAdapter[position].catRaces
+        viewHolder.tvDescription.text = listAdapter[position].catDesc
+        Glide.with(viewHolder.imgUserPhoto.context).load(listAdapter[position].catImage)
             .into(viewHolder.imgUserPhoto)
 
         viewHolder.itemView.setOnClickListener {
