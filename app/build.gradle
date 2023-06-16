@@ -17,7 +17,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -34,10 +33,15 @@ android {
 
     buildFeatures{
         viewBinding true
+        mlModelBinding true
     }
 }
 
 dependencies {
+    //Tensorflow
+    implementation 'org.tensorflow:tensorflow-lite:2.5.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0'
 
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

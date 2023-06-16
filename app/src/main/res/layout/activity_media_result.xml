@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:importantForAccessibility="no" />
 
     <ImageButton
         android:id="@+id/close"
@@ -33,7 +34,7 @@
         app:tint="@color/white" />
 
     <ImageButton
-        android:id="@+id/capture"
+        android:id="@+id/send"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginEnd="16dp"
