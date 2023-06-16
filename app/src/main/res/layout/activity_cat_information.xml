@@ -28,12 +28,19 @@
                 app:layout_collapseMode="parallax"
                 android:importantForAccessibility="no" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:layout_scrollFlags="scroll|enterAlways" />
+            <ImageButton
+                android:id="@+id/close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/black_transparent"
+                android:importantForAccessibility="no"
+                android:padding="10dp"
+                android:soundEffectsEnabled="false"
+                android:src="@drawable/ic_baseline_close"
+                app:tint="@color/white" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -55,28 +62,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Persian"
-                android:textSize="24sp"
-                app:drawableEndCompat="@drawable/ic_baseline_favorite_border_24" />
+                android:text="@string/cat_races"
+                android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="4dp"
-                android:fontFamily="@font/poppins_regular"
-                android:paddingBottom="6dp"
-                android:text="Iran"
-                android:textColor="@color/cardview_shadow_start_color"
-                android:textSize="14sp"
-                app:drawableTint="@color/orange"
-                app:drawableStartCompat="@drawable/ic_location" />
-
-            <TextView
+                android:paddingTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Overview"
+                android:text="@string/overview"
                 android:textSize="18sp" />
 
             <TextView
@@ -92,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Perawatan"
+                android:text="@string/care"
                 android:textSize="18sp" />
 
             <TextView

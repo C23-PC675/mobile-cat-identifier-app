@@ -15,4 +15,12 @@
     <string name="cat_care">Kucing dengan bulu panjang membutuhkan perawatan ekstra terhadap bulu mereka. Sikat bulu secara teratur untuk mencegah kusut dan membantu menghilangkan rontok bulu yang berlebihan. Pada beberapa ras dengan bulu panjang, seperti Persia, perawatan tambahan seperti pembersihan mata dan pemangkasan bulu di sekitar anus juga penting.</string>
     <string name="cat_identifier">Cat Identifier</string>
     <string name="tagline">Cat Care Simplified</string>
+    <string name="cat_races">Cat Races</string>
+    <string name="overview">Overview</string>
+    <string name="care">Cat Care</string>
+    <string name="screen">Screen</string>
+    <string name="title_screen_all">All Cats</string>
+    <string name="title_screen_popular">Popular Cat</string>
+    <string name="title_screen_recent">Recent</string>
+    <string name="title_screen_favorite">Favorite</string>
 </resources>
