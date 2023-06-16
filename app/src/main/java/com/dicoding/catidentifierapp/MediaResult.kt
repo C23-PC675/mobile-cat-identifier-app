@@ -1,10 +1,11 @@
 package com.dicoding.catidentifierapp
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.catidentifierapp.databinding.ActivityMediaResultBinding
 import com.dicoding.catidentifierapp.ml.ModelLiteStev
@@ -15,6 +16,7 @@ import java.nio.ByteOrder
 
 class MediaResult : AppCompatActivity() {
     private lateinit var binding: ActivityMediaResultBinding
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,15 +35,28 @@ class MediaResult : AppCompatActivity() {
                 binding.preview.setImageURI(data)
             }
         }
-
+        mainViewModel.getCats()
         binding.send.setOnClickListener {
             if (imageUri != null) {
-                catModel(imageUri)
+                val catRaces = catModel(imageUri)
+                mainViewModel.cats.observe(this) { cats ->
+                    val cat = cats.find { it.catRaces.equals(catRaces, ignoreCase = true) }
+                    if (cat != null) {
+                        setCat(cat)
+                    }
+                }
             }
         }
     }
 
-    private fun catModel(imageUri: Uri) {
+    private fun setCat(cat: ResponseItem) {
+        val intent = Intent(this, CatInformation::class.java)
+        intent.putExtra("CAT", cat)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun catModel(imageUri: Uri): String {
         val model = ModelLiteStev.newInstance(this)
 
         val inputStream = this.contentResolver.openInputStream(imageUri)
@@ -61,8 +76,8 @@ class MediaResult : AppCompatActivity() {
         val labels =
             application.assets.open("labels.txt").bufferedReader().use { it.readText() }.split("\n")
 
-        Log.i("MediaResult.CatModel", "Value: ${labels[max]}")
         model.close()
+        return labels[max]
     }
 
     private fun getMax(arr: FloatArray): Int {
