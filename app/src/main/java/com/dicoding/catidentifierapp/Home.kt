@@ -44,6 +44,22 @@ class Home : AppCompatActivity() {
             val intent = Intent(this, CatsListFavorite::class.java)
             startActivity(intent)
         }
+
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.home -> {
+                    true
+                }
+
+                R.id.Settings -> {
+                    val intent = Intent(this, Setting::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 
     private fun setCats(cats: List<ResponseItem>) {

@@ -14,11 +14,10 @@ class Main : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
-        startActivity(Intent(this, Home::class.java))
 
-
-//        Handler(Looper.getMainLooper()).postDelayed({
-//            finish()
-//        }, 3000)
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this, Home::class.java))
+            finish()
+        }, 3000)
     }
 }

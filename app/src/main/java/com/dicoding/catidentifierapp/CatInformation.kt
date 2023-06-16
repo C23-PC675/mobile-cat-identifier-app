@@ -25,6 +25,7 @@ class CatInformation : AppCompatActivity() {
             binding.overview.text = cat.catDesc
             Glide.with(binding.image.context).load(cat.catImage)
                 .into(binding.image)
+            binding.care.text = cat.catCare
         }
 
         binding.close.setOnClickListener {

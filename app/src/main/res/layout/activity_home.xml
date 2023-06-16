@@ -35,28 +35,16 @@
                     android:layout_height="wrap_content"
                     android:text="@string/home_text_2" />
 
-                <com.google.android.material.appbar.AppBarLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.search.SearchBar
-                        android:id="@+id/search_bar"
-                        style="@style/Widget.Material3.SearchBar.Outlined"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:backgroundTint="@color/white"
-                        android:hint="@string/search"
-                        android:outlineProvider="bounds"
-                        tools:ignore="TouchTargetSizeCheck" />
-                </com.google.android.material.appbar.AppBarLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/AllScreen"
@@ -87,7 +75,8 @@
                 style="@style/TextContent.Heading2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/recommend" />
+                android:text="@string/recommend"
+                android:textSize="18sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
@@ -103,7 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/white"
         app:fabCradleMargin="10dp"
         app:fabCradleVerticalOffset="10dp">
 
@@ -113,18 +102,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:background="@color/transparent"
+            android:background="@color/white"
+            app:itemIconTint="@color/orange"
+            app:itemTextColor="@color/orange"
             app:menu="@menu/bottom_nav_menu" />
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabScanner"
         style="@style/Widget.Material3.FloatingActionButton.Surface"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/orange"
         android:contentDescription="@string/app_name"
         app:layout_anchor="@id/bottomAppBar"
         app:maxImageSize="32dp"
-        app:srcCompat="@drawable/ic_scan" />
+        app:srcCompat="@drawable/ic_scan"
+        app:tint="@color/white" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

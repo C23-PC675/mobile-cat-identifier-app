@@ -1,17 +1,17 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Cat Identifier App</string>
     <string name="settings">Settings</string>
     <string name="home">Home</string>
     <string name="search">Search</string>
     <string name="home_text_1">Find Your</string>
-    <string name="home_text_2">Cat Favorite</string>
+    <string name="home_text_2">Favorite Cat</string>
     <string name="recommend">Recommend</string>
     <string name="favorite">Favorite</string>
     <string name="recent">Recent</string>
     <string name="popular">Popular</string>
     <string name="all">All</string>
     <string name="cat_picture">Cat Picture</string>
-    <string name="cat_overview">Kucing Persia telah ada selama berabad-abad dan dikenal karena bulu mereka yang panjang, wajah datar, hidung pesek, dan tubuh yang kompak. Mereka telah menjadi salah satu ras kucing yang paling populer di seluruh dunia karena keindahan dan kepribadian yang tenang</string>
+    <string name="cat_overview" tools:ignore="Typos">Kucing Persia telah ada selama berabad-abad dan dikenal karena bulu mereka yang panjang, wajah datar, hidung pesek, dan tubuh yang kompak. Mereka telah menjadi salah satu ras kucing yang paling populer di seluruh dunia karena keindahan dan kepribadian yang tenang</string>
     <string name="cat_care">Kucing dengan bulu panjang membutuhkan perawatan ekstra terhadap bulu mereka. Sikat bulu secara teratur untuk mencegah kusut dan membantu menghilangkan rontok bulu yang berlebihan. Pada beberapa ras dengan bulu panjang, seperti Persia, perawatan tambahan seperti pembersihan mata dan pemangkasan bulu di sekitar anus juga penting.</string>
     <string name="cat_identifier">Cat Identifier</string>
     <string name="tagline">Cat Care Simplified</string>
@@ -23,4 +23,6 @@
     <string name="title_screen_popular">Popular Cat</string>
     <string name="title_screen_recent">Recent</string>
     <string name="title_screen_favorite">Favorite</string>
+    <string name="title_screen_setting">Settings</string>
+    <string name="settings_exit">Exit</string>
 </resources>

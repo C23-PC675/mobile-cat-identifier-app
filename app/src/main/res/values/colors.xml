@@ -5,6 +5,7 @@
 
 
     <color name="orange">#FFFF7901</color>
+    <color name="orange_500">#FF861A</color>
     <color name="crimson">#FFEC4543</color>
     <color name="gray">#808080</color>
     <color name="transparent">#00000000</color>

@@ -47,6 +47,10 @@ class MediaResult : AppCompatActivity() {
                 }
             }
         }
+
+        binding.close.setOnClickListener {
+            finish()
+        }
     }
 
     private fun setCat(cat: ResponseItem) {
