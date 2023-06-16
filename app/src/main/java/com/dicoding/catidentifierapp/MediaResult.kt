@@ -40,7 +40,7 @@ class MediaResult : AppCompatActivity() {
             if (imageUri != null) {
                 val catRaces = catModel(imageUri)
                 mainViewModel.cats.observe(this) { cats ->
-                    val cat = cats.find { it.catRaces.equals(catRaces, ignoreCase = true) }
+                    val cat = cats.find { it.catRaces == catRaces.trim() }
                     if (cat != null) {
                         setCat(cat)
                     }
